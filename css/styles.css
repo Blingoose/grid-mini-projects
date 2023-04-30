@@ -244,6 +244,7 @@ Tiles
 
 .tiles-center img {
   height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1170px) {
@@ -251,36 +252,48 @@ Tiles
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 200px);
     margin-bottom: 4rem;
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
   }
 
   .tile-1 {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 2;
+    grid-area: a;
   }
 
   .tile-2 {
-    grid-column: 4 / span 1;
-    grid-row: 1 / span 1;
+    grid-area: b;
   }
 
   .tile-3 {
-    grid-column: 4;
-    grid-row: 2;
+    grid-area: c;
   }
 
   .tile-4 {
-    grid-column: 1 / -1;
-    grid-row: 3;
+    grid-area: f;
   }
 
   .tile-5 {
-    grid-column: 1;
-    grid-row: 4 / span 2;
+    grid-area: e;
   }
 
   .tile-6 {
-    grid-column: 2 / span 3;
-    grid-row: 4 / span 1;
+    grid-area: d;
+  }
+
+  .tile-7 {
+    grid-area: g;
+  }
+
+  .tile-8 {
+    grid-area: h;
+  }
+
+  .tile-9 {
+    grid-area: i;
   }
 }
 
