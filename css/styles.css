@@ -302,3 +302,119 @@ Tiles
 Layout
 ===================
  */
+
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+.header {
+  background: var(--primaryColor);
+  text-align: center;
+  color: var(--mainWhite);
+  padding: 0.5rem 0;
+}
+
+.navbar {
+  background: var(--darkGrey);
+  padding: 0rem 1rem;
+}
+
+.nav-link {
+  text-transform: capitalize;
+  display: block;
+  padding: 1rem;
+  color: var(--mainBlack);
+  letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
+  font-size: 1.2rem;
+}
+
+.nav-link:hover {
+  color: var(--mainWhite);
+}
+
+.content {
+  padding: 2rem;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  background: var(--primaryColor);
+  padding: 1rem 0rem;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+}
+
+.footer {
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+  padding: 0.5rem 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.footer p {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main {
+    grid-template-columns: [col-start] 200px [col-1-end] 1fr [col-2-end] 50px [col-end];
+    grid-template-rows: [row-start] auto [row-1-end] 1fr [row-2-end] auto [row-end];
+  }
+
+  .header {
+    grid-column: col-start/col-end;
+    grid-row: row-start/row-1-end;
+  }
+
+  .navbar {
+    grid-column: col-start/col-1-end;
+    grid-row: row-1-end/row-2-end;
+  }
+
+  .navbar ul {
+    min-height: 100%;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .content {
+    grid-column: col-1-end/ col-2-end;
+    grid-row: row-1-end/ row-2-end;
+  }
+
+  .sidebar {
+    grid-column: col-2-end/col-end;
+    grid-row: row-1-end/row-2-end;
+    grid-template-columns: 1fr;
+    align-items: center;
+    background: var(--darkGrey);
+  }
+
+  .footer {
+    grid-column: col-start / col-end;
+    grid-row: row-2-end/ row-end;
+  }
+}
